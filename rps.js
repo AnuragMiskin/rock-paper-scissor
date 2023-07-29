@@ -8,6 +8,7 @@ function playround(){
     const mychoice=playerchoice();
     const computerchoice=getcomputerchoice();
     if(mychoice===computerchoice){
+        console.log("player chooses:"+mychoice+" and computer chooses:"+computerchoice);
         console.log("draw");
     }
     else if(
@@ -15,10 +16,12 @@ function playround(){
         (mychoice==='paper' && computerchoice==='rock')||
         (mychoice==='scissor' && computerchoice==='paper')
     ){
+            console.log("player chooses:"+mychoice+" and computer chooses:"+computerchoice);
             console.log("win");
             win++;
         }
     else{
+        console.log("player chooses:"+mychoice+" and computer chooses:"+computerchoice);
         console.log("loss");
         loss++
     }
