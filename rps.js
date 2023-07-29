@@ -4,7 +4,8 @@ function getcomputerchoice(){
     const randomIndex=Math.floor(Math.random()*choices.length);
     return choices[randomIndex];
 }
-function playround(mychoice){
+function playround(){
+    const mychoice=playerchoice();
     const computerchoice=getcomputerchoice();
     if(mychoice===computerchoice){
         console.log("draw");
@@ -22,19 +23,30 @@ function playround(mychoice){
         loss++
     }
 }
-let mychoice=(prompt("enter your choice").toLowerCase());
-
+function playerchoice(){
+let choice=(prompt("enter your choice").toLowerCase());
+return choice;
+}
 let win=0,loss=0;
 
 for(i=1;i<=5;i++){
-  playround(mychoice,getcomputerchoice());
+  playround();
   console.log("player=",win);
   console.log("com=",loss);
+
+  if(win==3 || loss==3){
+    break;
+  }
+
  }
- if(win>=loss)
+ if(win>loss)
  {
   console.log("you win")
  }
  else{
   console.log("you lose")
  }
+/*
+should implement different choice for the user each match
+should console log computer choice each Time
+*/
