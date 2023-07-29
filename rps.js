@@ -28,7 +28,12 @@ function playround(){
 }
 function playerchoice(){
 let choice=(prompt("enter your choice").toLowerCase());
+if((choice==='rock') || (choice==='paper') || (choice==='scissor')){
 return choice;
+}
+else{
+    console.error("choice not allowed");
+}
 }
 let win=0,loss=0;
 
