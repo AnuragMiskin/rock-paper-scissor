@@ -49,7 +49,3 @@ for(i=1;i<=5;i++){
  else{
   console.log("you lose")
  }
-/*
-should implement different choice for the user each match
-should console log computer choice each Time
-*/
