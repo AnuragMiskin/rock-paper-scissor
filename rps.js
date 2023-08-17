@@ -6,26 +6,39 @@ function getcomputerchoice(){
 }
 function playround(mychoice){
     const computerchoice=getcomputerchoice();
+    const div=document.querySelector('div');
+    const text=document.createElement('span');
     if(mychoice===computerchoice){
-        console.log("player chooses:"+mychoice+" and computer chooses:"+computerchoice);
-        console.log("draw");
+        text.textContent="player chooses:"+mychoice+" and computer chooses:"+computerchoice+"\n its a draw";
+        div.appendChild(text);
     }
     else if(
         (mychoice==='rock' && computerchoice==='scissor')|| 
         (mychoice==='paper' && computerchoice==='rock')||
         (mychoice==='scissor' && computerchoice==='paper')
     ){
-            console.log("player chooses:"+mychoice+" and computer chooses:"+computerchoice);
-            console.log("win");
+            text.textContent="player chooses:"+mychoice+" and computer chooses:"+computerchoice+"\n its a win";
+            div.appendChild(text);
             win++;
         }
     else{
-        console.log("player chooses:"+mychoice+" and computer chooses:"+computerchoice);
-        console.log("loss");
+        text.textContent="player chooses:"+mychoice+" and computer chooses:"+computerchoice+"\n its a loss";
+        div.appendChild(text);
         loss++
     }
 }
+
 var mychoice='';
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        mychoice = button.id;
+        playround(mychoice);
+    });
+});
+
+/*
 const rock=document.querySelector('#rock');
 rock.addEventListener('click',()=>{
     mychoice='rock';
@@ -42,7 +55,7 @@ scissor.addEventListener('click',()=>{
     playround(mychoice);
 });
 
-
+*/
 
 
 
