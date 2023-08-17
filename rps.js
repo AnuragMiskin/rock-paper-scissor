@@ -4,8 +4,7 @@ function getcomputerchoice(){
     const randomIndex=Math.floor(Math.random()*choices.length);
     return choices[randomIndex];
 }
-function playround(){
-    const mychoice=playerchoice();
+function playround(mychoice){
     const computerchoice=getcomputerchoice();
     if(mychoice===computerchoice){
         console.log("player chooses:"+mychoice+" and computer chooses:"+computerchoice);
@@ -26,6 +25,28 @@ function playround(){
         loss++
     }
 }
+var mychoice='';
+const rock=document.querySelector('#rock');
+rock.addEventListener('click',()=>{
+    mychoice='rock';
+    playround(mychoice);
+});
+const paper=document.querySelector('#paper');
+paper.addEventListener('click',()=>{
+    mychoice='paper';
+    playround(mychoice);
+});
+const scissor=document.querySelector('#scissor');
+scissor.addEventListener('click',()=>{
+    mychoice='scissor';
+    playround(mychoice);
+});
+
+
+
+
+
+/*
 function playerchoice(){
 let choice=(prompt("enter your choice").toLowerCase());
 if((choice==='rock') || (choice==='paper') || (choice==='scissor')){
@@ -36,21 +57,3 @@ else{
 }
 }
 let win=0,loss=0;
-
-for(i=1;i<=5;i++){
-  playround();
-  console.log("player=",win);
-  console.log("com=",loss);
-
-  if(win==3 || loss==3){
-    break;
-  }
-
- }
- if(win>loss)
- {
-  console.log("you win")
- }
- else{
-  console.log("you lose")
- }
