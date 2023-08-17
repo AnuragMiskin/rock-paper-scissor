@@ -1,0 +1,7 @@
+-remove logic that plays exactly five rounds
+
+-create three buttons for rock paper and scissor(add event listner to the buttons that call (playround) function)
+
+-add div for displaying results /change console log to dom methods
+
+-display running score (playing first to have win 5 rounds win)
