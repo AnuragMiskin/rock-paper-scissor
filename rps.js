@@ -6,10 +6,10 @@ function getcomputerchoice(){
 }
 function playround(mychoice){
     const computerchoice=getcomputerchoice();
-    const div=document.querySelector('div');
-    const text=document.createElement('span');
+    const div=document.querySelector('#result');
+    const text=document.createElement('p');
     if(mychoice===computerchoice){
-        text.textContent="player chooses:"+mychoice+" and computer chooses:"+computerchoice+"\n its a draw";
+        text.innerHTML="player chooses:"+mychoice+" and computer chooses:"+computerchoice+"<br> its a draw";
         div.appendChild(text);
     }
     else if(
@@ -17,23 +17,19 @@ function playround(mychoice){
         (mychoice==='paper' && computerchoice==='rock')||
         (mychoice==='scissor' && computerchoice==='paper')
     ){
-            text.textContent="player chooses:"+mychoice+" and computer chooses:"+computerchoice+"\n its a win";
+            text.innerHTML="player chooses:"+mychoice+" and computer chooses:"+computerchoice+"<br> its a win";
             div.appendChild(text);
-            win++;
         }
     else{
-        text.textContent="player chooses:"+mychoice+" and computer chooses:"+computerchoice+"\n its a loss";
+        text.innerHTML="player chooses:"+mychoice+" and computer chooses:"+computerchoice+"<br> its a loss";
         div.appendChild(text);
-        loss++
     }
 }
 
-var mychoice='';
 const buttons = document.querySelectorAll('button');
-
 buttons.forEach(button => {
     button.addEventListener('click', () => {
-        mychoice = button.id;
+        const mychoice = button.id;
         playround(mychoice);
     });
 });
@@ -70,3 +66,4 @@ else{
 }
 }
 let win=0,loss=0;
+*/

@@ -5,3 +5,26 @@
 -add div for displaying results /change console log to dom methods
 
 -display running score (playing first to have win 5 rounds win)
+
+
+
+html
+<button id=rock>rock<button>
+<button id=paper>paper<butto>
+<button id=scissor>scissor<button>
+
+
+javascript 
+const but=document.queryselector(#rock)
+but.addeventlistner('rock',()=>{
+    choice=rock;
+    playround()
+}
+
+
+)
+const div=document.queryselector(div)
+const result=document.createelement(span)
+result.text( you "result") 
+
+playround(choice)
