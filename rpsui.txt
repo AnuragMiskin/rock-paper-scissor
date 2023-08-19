@@ -1,8 +1,8 @@
--remove logic that plays exactly five rounds
+-remove logic that plays exactly five rounds /done
 
--create three buttons for rock paper and scissor(add event listner to the buttons that call (playround) function)
+-create three buttons for rock paper and scissor(add event listner to the buttons that call (playround) function) /done
 
--add div for displaying results /change console log to dom methods
+-add div for displaying results /change console log to dom methods /done
 
 -display running score (playing first to have win 5 rounds win)
 
@@ -28,3 +28,17 @@ const result=document.createelement(span)
 result.text( you "result") 
 
 playround(choice)
+
+
+
+-display running score (playing first to have win 5 rounds win)
+
+counter variable win and loss added -
+
+-need something that displays the score does not repeat each time 
+
+-need for div to reset itself each time not to add div every time (its a win/loss text)
+
+-playround should only be called until loss || win ==5 if win{ add div you win} else add div you lose  
+
+

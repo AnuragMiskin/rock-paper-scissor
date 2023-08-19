@@ -19,13 +19,16 @@ function playround(mychoice){
     ){
             text.innerHTML="player chooses:"+mychoice+" and computer chooses:"+computerchoice+"<br> its a win";
             div.appendChild(text);
+            win++;
         }
     else{
         text.innerHTML="player chooses:"+mychoice+" and computer chooses:"+computerchoice+"<br> its a loss";
         div.appendChild(text);
+        loss++;
     }
 }
-
+let win=0,loss=0;
+while(win<=5 || loss<=5){
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => {
     button.addEventListener('click', () => {
@@ -33,6 +36,13 @@ buttons.forEach(button => {
         playround(mychoice);
     });
 });
+}
+if(win==5){
+    //add div that displays win
+}
+else{
+    //add div that displays loss
+}
 
 /*
 const rock=document.querySelector('#rock');
@@ -67,3 +77,22 @@ else{
 }
 let win=0,loss=0;
 */
+/*
+function playround(mychoice){
+    const computerchoice=getcomputerchoice();
+    if(mychoice===computerchoice){
+        document.queryselector('p').innerhtml ="player chooses:'+mychoice' and computer chooses '+computer choice+'<br> its a draw
+    }
+    else if(
+        (mychoice==='rock' && computerchoice==='scissor')|| 
+        (mychoice==='paper' && computerchoice==='rock')||
+        (mychoice==='scissor' && computerchoice==='paper')
+    ){
+           document.queryselector('p').innerhtml='
+           win++ 
+           document.queryselector(#you).innerhtml=+win- create a p tag in html to display playerchoice and computerchoice and a win and loss tags whose innerhtmls will be manipulated here
+        }
+    else{
+        -- same 
+        loss++;
+    }
