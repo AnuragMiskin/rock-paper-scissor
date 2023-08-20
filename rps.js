@@ -6,24 +6,19 @@ function getcomputerchoice(){
 }
 function playround(mychoice){
     const computerchoice=getcomputerchoice();
-    const div=document.querySelector('#result');
-    const text=document.createElement('p');
     if(mychoice===computerchoice){
-        text.innerHTML="player chooses:"+mychoice+" and computer chooses:"+computerchoice+"<br> its a draw";
-        div.appendChild(text);
+        document.querySelector('#choice').innerHTML="Player chooses:"+mychoice+"and computer chooses"+computerchoice+"<br> Its a draw";
     }
     else if(
         (mychoice==='rock' && computerchoice==='scissor')|| 
         (mychoice==='paper' && computerchoice==='rock')||
         (mychoice==='scissor' && computerchoice==='paper')
     ){
-            text.innerHTML="player chooses:"+mychoice+" and computer chooses:"+computerchoice+"<br> its a win";
-            div.appendChild(text);
-            win++;
+        document.querySelector('#choice').innerHTML="Player chooses:"+mychoice+"and computer chooses"+computerchoice+"<br> you win";
+        win++;
         }
     else{
-        text.innerHTML="player chooses:"+mychoice+" and computer chooses:"+computerchoice+"<br> its a loss";
-        div.appendChild(text);
+        document.querySelector('#choice').innerHTML="Player chooses:"+mychoice+"and computer chooses"+computerchoice+"<br> you lose";
         loss++;
     }
 }
