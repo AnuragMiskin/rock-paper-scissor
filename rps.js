@@ -23,12 +23,12 @@ function playround(mychoice){
     ){
         message+='You Win';
         win++;
-        winCount.innerHTML="YOU:"+win;
+        winCount.textContent="YOU:"+win;
         }
     else{
-        message+='You lose'
+        message+='You lose';
         loss++;
-        lossCount.innerHTML="COMPUTER:"+loss;
+        lossCount.textContent="COMPUTER:"+loss;
     }
     resultMessage.innerHTML=message;
     if(win===5 || loss===5){
