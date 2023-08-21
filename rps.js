@@ -9,22 +9,31 @@ function playround(mychoice){
         return;
     }
     const computerchoice=getcomputerchoice();
+    const resultMessage = document.querySelector('#choice');
+    const winCount = document.querySelector('#win');
+    const lossCount = document.querySelector('#loss');
+    let message='player chooses : ${mychoice} and computer chooses ${computer choice} <br>'
     if(mychoice===computerchoice){
-        document.querySelector('#choice').innerHTML="Player chooses:"+mychoice+"and computer chooses"+computerchoice+"<br> Its a draw";
+       message+='Its a draw';
     }
     else if(
         (mychoice==='rock' && computerchoice==='scissor')|| 
         (mychoice==='paper' && computerchoice==='rock')||
         (mychoice==='scissor' && computerchoice==='paper')
     ){
-        document.querySelector('#choice').innerHTML="Player chooses:"+mychoice+"and computer chooses"+computerchoice+"<br> you win";
+        message+='You Win';
         win++;
-        document.querySelector('#win').innerHTML="YOU:"+win;
+        winCount.innerHTML="YOU:"+win;
         }
     else{
-        document.querySelector('#choice').innerHTML="Player chooses:"+mychoice+"and computer chooses"+computerchoice+"<br> you lose";
+        message+='You lose'
         loss++;
-        document.querySelector('#loss').innerHTML="COMPUTER:"+loss;
+        lossCount.innerHTML="COMPUTER:"+loss;
+    }
+    resultMessage.innerHTML=message;
+    if(win===5 || loss===5){
+        const gameovermessage=document.querySelector('#game');
+        gameovermessage.innerHTML=win===5?"GAME OVER YOU WIN":"GAME OVER YOU LOSE";
     }
 }
 let win=0,loss=0;
@@ -33,13 +42,5 @@ buttons.forEach(button => {
     button.addEventListener('click', () => {
         const mychoice = button.id;
         playround(mychoice);
-        if(win===5){
-            document.querySelector('#game').innerHTML="GAME OVER YOU WIN";
-            return;
-        }
-        else if(loss===5){
-            document.querySelector('#game').innerHTML="GAME OVER YOU LOSE";
-            return;
-        }
     });
 });
