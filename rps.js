@@ -12,7 +12,7 @@ function playround(mychoice){
     const resultMessage = document.querySelector('#choice');
     const winCount = document.querySelector('#win');
     const lossCount = document.querySelector('#loss');
-    let message='player chooses : ${mychoice} and computer chooses ${computer choice} <br>'
+    let message=`player chooses : ${mychoice} and computer chooses ${computerchoice} <br>`;
     if(mychoice===computerchoice){
        message+='Its a draw';
     }
